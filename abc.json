@@ -1,0 +1,15 @@
+{
+    "name": "simpleCountDown",
+    "comName":"SimpleCountDown",
+    "version": "1.0.0",
+    "desc": "简单的倒计时组件",
+    "tag":"countdown 倒计时",
+    "githubName":"nikogu",
+    "author": {
+        "name": "yujiang",
+        "email": "zhihao.gzh@alibaba-inc.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
