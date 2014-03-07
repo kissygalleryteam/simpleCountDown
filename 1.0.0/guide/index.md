@@ -50,10 +50,12 @@ SimpleCountDown是一个倒计时组件
 		//你可以添加多个，它们都被维护在一个队列里，在同一个定时器中运行
 		var myCount1 = simpleCountDown.add(timeNode, leftTime);
 
-		//你也可以设置触发点，倒计时到了那个地方会执行回调
-		myCount1.addTrigger(0, function(timeNode) {
-			timeNode.leftTime = 0;
-			timeNode.stop = 1;
+		//你也可以设置触发点，倒计时到了那个地方会执行回调(剩余时间小于指定时间触发)
+		myCount1.addTrigger(0, function(myCount) {
+			//你也可以重置它
+			myCount.reset(0);
+			//停止倒计时
+			myCount.stop = 1;
 		});
 
 		//你也可以重置计时器
