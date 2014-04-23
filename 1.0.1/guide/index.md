@@ -2,9 +2,15 @@
 
 SimpleCountDown是一个倒计时组件，但不仅仅如此
 
-* 版本：1.0.0
+* 版本：1.0.1
 * 作者：yujiang(禺疆)
 * demo：[http://gallery.kissyui.com/simpleCountDown/1.0.0/demo/index.html](http://gallery.kissyui.com/simpleCountDown/1.0.0/demo/index.html)
+
+## changelog
+
+### V1.0.1
+
+    [!] 支持跨天小时，以前1天11时可表示为->35时，根据模板自动判断，可参看demo1
 
 ## 概要简介
 SimpleCountDown是一个倒计时组件
