@@ -71,14 +71,16 @@ KISSY.add(function(S) {
             hNode,
             dNode;
 
-        if (this.node[0] && !this.node[0].__cache) {
-            this.node[0].__cache = {
-                msNode: this.node.all('.scd-digit-ms'),
-                sNode: this.node.all('.scd-digit-s'),
-                mNode: this.node.all('.scd-digit-m'),
-                hNode: this.node.all('.scd-digit-h'),
-                dNode: this.node.all('.scd-digit-d')
-            };
+        if (this.node[0]) {
+            if (!this.node[0].__cache) {
+                this.node[0].__cache = {
+                    msNode: this.node.all('.scd-digit-ms'),
+                    sNode: this.node.all('.scd-digit-s'),
+                    mNode: this.node.all('.scd-digit-m'),
+                    hNode: this.node.all('.scd-digit-h'),
+                    dNode: this.node.all('.scd-digit-d')
+                };
+            }
             msNode = this.node[0].__cache.msNode;
             sNode = this.node[0].__cache.sNode;
             mNode = this.node[0].__cache.mNode;
