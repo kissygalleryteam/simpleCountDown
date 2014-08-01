@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>SimpleCountDown的demo</title>
+<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js"></script>
+<style type="text/css">
+s {
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+	<h2>SimpleCountDown简单栗子</h2>
+	<p id="my-time">${h}小时${m}分${s}秒${ms}</p>
+
+<script type="text/javascript">
+//引入kg packages
+KISSY.config({
+	packages: [{
+        name: 'simpleCountDown',
+        path: '../../',
+        ignorePackageNameInUri: true,
+        debug: true
+    }]
+});
+
+//使用
+KISSY.add('test', function(S, Node, SimpleCountDown) {
+    var $ = Node.all;
+    
+    //实例一个倒计时生产器，precision是间隔时间（可选），默认100ms
+    var simpleCountDown = new SimpleCountDown();
+    
+    //初始化它，这个时候倒计时的主程序已经运行了
+    simpleCountDown.init();
+    
+    //接下来，你只需要添加倒计时即可
+    //timeNode是kissy dom对象，leftTime是剩余时间（单位ms）
+    //你可以添加多个，它们都被维护在一个队列里，在同一个定时器中运行
+    var timeNode = $('#my-time'),
+        leftTime = 1000000000;
+    var myCount1 = simpleCountDown.add(timeNode, leftTime);
+    
+    //你也可以设置触发点，倒计时到了那个地方会执行回调
+    myCount1.addTrigger(0, function(timeNode) {
+        timeNode.leftTime = 0;
+        //为1表示暂停，0表示运行
+        timeNode.stop = 1;
+    });
+}, {
+    requires: ['node', 'simpleCountDown/2.0.0/']
+});
+KISSY.use('test');
+</script>
+
+</body>
+</html>
